@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on win32)" generated="2026-04-22T02:10:03.399581" rpa="false" schemaversion="5">
+<suite id="s1" name="CU IniciarSesion" source="C:\Users\Alici\PycharmProjects\Pruebas_RADBIKES\Tests\CU_IniciarSesion.robot">
+<test id="s1-t1" name="CP01: Inicio de sesión exitoso" line="8">
+<kw name="Abrir navegador en login" owner="Keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:03.929309" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<msg time="2026-04-22T02:10:04.134471" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument('--incognito')</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-22T02:10:03.928383" elapsed="1.653557"/>
+</kw>
+<status status="PASS" start="2026-04-22T02:10:03.925853" elapsed="1.657188"/>
+</kw>
+<kw name="Ingresar credenciales" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:05.591024" level="INFO">Typing text 'plunal' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:05.588140" elapsed="1.475354"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:07.065275" level="INFO">Typing text 'crujones' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${contraseña}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:07.064301" elapsed="0.261230"/>
+</kw>
+<arg>${USER_VALIDO}</arg>
+<arg>${PASS_VALIDA}</arg>
+<status status="PASS" start="2026-04-22T02:10:05.585953" elapsed="1.741159"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:07.329195" level="INFO">Clicking element 'xpath=//span[contains(text(),"Ingresar")]'.</msg>
+<arg>xpath=//span[contains(text(),"Ingresar")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:07.328098" elapsed="0.157689"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Gestión de Catálogo</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-22T02:10:07.486670" elapsed="1.812247"/>
+</kw>
+<status status="PASS" start="2026-04-22T02:10:03.923604" elapsed="5.376490"/>
+</test>
+<test id="s1-t2" name="CP02: Visualizar contraseña" line="14">
+<kw name="Abrir navegador en login" owner="Keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:09.306292" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<msg time="2026-04-22T02:10:09.717428" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument('--incognito')</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-22T02:10:09.305023" elapsed="5.527795"/>
+</kw>
+<status status="PASS" start="2026-04-22T02:10:09.303550" elapsed="5.530539"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:14.837181" level="INFO">Typing text 'crujones' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASS_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:14.835363" elapsed="0.786847"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:15.681892" level="INFO">Element 'id=password' attribute 'type' contains value 'password'.</msg>
+<arg>id=password</arg>
+<arg>type</arg>
+<arg>password</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2026-04-22T02:10:15.623099" elapsed="0.059562"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:15.685905" level="INFO">Clicking element 'xpath=//button[@aria-label="Mostrar contraseña"]'.</msg>
+<arg>xpath=//button[@aria-label="Mostrar contraseña"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:15.684132" elapsed="0.262400"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:16.027504" level="INFO">Element 'id=password' attribute 'type' contains value 'text'.</msg>
+<arg>id=password</arg>
+<arg>type</arg>
+<arg>text</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2026-04-22T02:10:15.947456" elapsed="0.080568"/>
+</kw>
+<status status="PASS" start="2026-04-22T02:10:09.301795" elapsed="6.726840"/>
+</test>
+<test id="s1-t3" name="CP03: Iniciar sesión con campos en blanco" line="21">
+<kw name="Abrir navegador en login" owner="Keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:16.055669" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<msg time="2026-04-22T02:10:16.392692" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument('--incognito')</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-22T02:10:16.033263" elapsed="2.562244"/>
+</kw>
+<status status="PASS" start="2026-04-22T02:10:16.031592" elapsed="2.565527"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:18.600397" level="INFO">Clicking element 'xpath=//span[contains(text(),"Ingresar")]'.</msg>
+<arg>xpath=//span[contains(text(),"Ingresar")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:18.598853" elapsed="3.855442"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:27.603130" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-22T02:10:27.604809" level="FAIL">Text 'Todos los campos deben ser llenados' did not appear in 5 seconds.</msg>
+<arg>Todos los campos deben ser llenados</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-04-22T02:10:22.458491" elapsed="5.157008">Text 'Todos los campos deben ser llenados' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-04-22T02:10:16.029868" elapsed="11.586531">Text 'Todos los campos deben ser llenados' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t4" name="CP04: Iniciar sesión con credenciales incorrectas" line="26">
+<kw name="Abrir navegador en login" owner="Keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:27.619911" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<msg time="2026-04-22T02:10:27.909204" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument('--incognito')</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-22T02:10:27.619265" elapsed="9.007100"/>
+</kw>
+<status status="PASS" start="2026-04-22T02:10:27.618582" elapsed="9.008949"/>
+</kw>
+<kw name="Ingresar credenciales" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:36.633174" level="INFO">Typing text 'usuario123' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:36.631544" elapsed="1.138779"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:37.772340" level="INFO">Typing text 'contraseña' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${contraseña}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:37.771153" elapsed="0.616395"/>
+</kw>
+<arg>${USER_INVALIDO}</arg>
+<arg>${PASS_INVALIDA}</arg>
+<status status="PASS" start="2026-04-22T02:10:36.629153" elapsed="1.762418"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:38.394307" level="INFO">Clicking element 'xpath=//span[contains(text(),"Ingresar")]'.</msg>
+<arg>xpath=//span[contains(text(),"Ingresar")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:38.392995" elapsed="0.292303"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Usuario o contraseña incorrectos</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-04-22T02:10:38.686651" elapsed="0.843457"/>
+</kw>
+<status status="PASS" start="2026-04-22T02:10:27.617251" elapsed="11.913512"/>
+</test>
+<test id="s1-t5" name="CP05: Olvido de contraseña" line="32">
+<kw name="Abrir navegador en login" owner="Keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:39.537454" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<msg time="2026-04-22T02:10:39.900742" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument('--incognito')</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-22T02:10:39.536004" elapsed="5.661158"/>
+</kw>
+<status status="PASS" start="2026-04-22T02:10:39.534526" elapsed="5.663376"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:45.202141" level="INFO">Clicking element 'xpath=//a[contains(text(), "¿Olvidó su contraseña?")]'.</msg>
+<arg>xpath=//a[contains(text(), "¿Olvidó su contraseña?")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-22T02:10:45.198639" elapsed="0.530107"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-04-22T02:10:51.095100" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-22T02:10:51.095966" level="FAIL">Text 'debe contactar al administrador' did not appear in 5 seconds.</msg>
+<arg>debe contactar al administrador</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-04-22T02:10:45.729792" elapsed="5.369829">Text 'debe contactar al administrador' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//button[text()='Cerrar']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-04-22T02:10:51.100496" elapsed="0.000425"/>
+</kw>
+<status status="FAIL" start="2026-04-22T02:10:39.531990" elapsed="11.569556">Text 'debe contactar al administrador' did not appear in 5 seconds.</status>
+</test>
+<status status="FAIL" start="2026-04-22T02:10:03.419976" elapsed="47.687414"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="CU IniciarSesion" id="s1" pass="3" fail="2" skip="0">CU IniciarSesion</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-04-22T02:10:04.134471" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2026-04-22T02:10:09.717428" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2026-04-22T02:10:16.392692" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2026-04-22T02:10:27.909204" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2026-04-22T02:10:39.900742" level="WARN">The chromedriver version (146.0.7680.165) detected in PATH at C:\bin\chromedriver.exe might not be compatible with the detected chrome version (147.0.7727.102); currently, chromedriver 147.0.7727.57 is recommended for chrome 147.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
