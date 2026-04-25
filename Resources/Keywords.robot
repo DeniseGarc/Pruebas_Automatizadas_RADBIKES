@@ -16,35 +16,48 @@ Iniciar sesion
     Input Text    id=username    ${USER_VALIDO}
     Input Text    id=password    ${PASS_VALIDA}
     Click Element             xpath=//span[contains(text(),"Ingresar")]
+    Wait Until Page Contains    Gestión de Catálogo
 
-Llenar formulario producto
-    [Arguments]     ${nombre_producto}  ${sku}  ${codigo_barras}    ${marca}    ${categoria}    ${subcategoria}     ${precio}   ${stock_inicial}    ${stock_min}    ${descripcion}   ${atributo}     ${valor}
+Llenar formulario nuevo producto 1
+    [Arguments]     ${nombre_producto}  ${sku}  ${codigo_barras}    ${marca}    ${categoria}    ${subcategoria}     ${precio}   ${stock_inicial}    ${stock_min}    ${descripcion}   ${atributo1}     ${valor1}   ${atributo2}     ${valor2}     ${atributo3}     ${valor3}       ${imagen}
     Input Text    id=nombreProducto    ${nombre_producto}
     Input Text    id=sku    ${sku}
+    Input Text    id=codigoBarras    ${codigo_barras}
+
+    Click Button    id=marca
+    Wait Until Page Contains    Agregar Marca
+    Input Text    id=marca-input    ${marca}
+    Click Button    xpath=//button[text()="Guardar"]
+
+
+    Click Button    id=categoria
+    Wait Until Page Contains    Agregar Categoría
+    Input Text    id=categoría-input    ${categoria}
+    Click Button    xpath=//button[text()="Guardar"]
+
+
+    Click Button    id=subcategoria
+    Wait Until Page Contains    Agregar Subcategoría
+    Select From List By Value    id=categoriaPadre     ${categoria}
+    Input Text    id=subcategoría-input    ${subcategoria}
+    Click Button    xpath=//button[text()="Guardar"]
+
     Input Text    id=precio    ${precio}
-    Input Text    id=stockInicial    ${stock_inicial}
+    Input Text    id=stock    ${stock_inicial}
     Input Text    id=stockMin    ${stock_min}
     Input Text    id=descripcion    ${descripcion}
-    Agregar atributo producto     ${atributo}   ${valor}
 
+    Agregar atributo producto     ${atributo1}   ${valor1}
+    Agregar atributo producto     ${atributo2}   ${valor2}
+    Agregar atributo producto     ${atributo3}   ${valor3}
+
+    Click Element    id=subirImagen
+    Choose File     id=image    ${URL_FOTO}
 
 Agregar atributo producto
     [Arguments]     ${atributo}     ${valor}
     Input Text    id=atributo    ${atributo}
     Input Text    id=valor     ${valor}
+    Click Button    id=agregar
 
-Seleccionar Nuevo Producto
-    Click Button    xpath=//button[contains(text(), 'Nuevo Producto')]
-    Wait Until Element Is Visible    id=modal-alta
 
-Seleccionar Accion Editar En Producto
-    [Arguments]    ${nombre_prod}
-    Click Element    xpath=//tr[contains(., ${nombre_prod})]//button[@title='Editar']
-
-Seleccionar Accion Eliminar En Producto
-    [Arguments]    ${nombre_prod}
-    Click Element    xpath=//tr[contains(., ${nombre_prod})]//button[@title='Editar']
-
-Confirmar Dialogo De Eliminacion
-    Wait Until Element Is Visible    id=confirm-dialog
-    Click Button    id=btn-confirmar-eliminar
