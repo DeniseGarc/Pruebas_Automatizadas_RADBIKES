@@ -26,3 +26,8 @@ ${ATRIBUTO_3}       Llantas
 ${VALOR_3}      Continental CrossKing 29x2.20"
 ${URL_FOTO}     C:/Users/Alici/Downloads/XTADS-Naranja.jpg
 
+${PRODUCTO_INEXISTENTE}    PROD NO EXISTE
+${PRODUCTO_VENTA_1}   Casco MTB Fox Flux
+${PRODUCTO_VENTA_1_STOCK}   12 u.
+${PRODUCTO_VENTA_2}   Cámara 29" Válvula Presta
+

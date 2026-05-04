@@ -60,4 +60,9 @@ Agregar atributo producto
     Input Text    id=valor     ${valor}
     Click Button    id=agregar
 
-
+Agregar producto al carrito
+    [Arguments]    ${producto}
+    Input Text    css=input[placeholder*='Buscar']    ${producto}
+    Wait Until Element Is Visible    xpath=//div[contains(.,'${producto}')]    2s
+    Click Element    xpath=(//div[contains(.,'${producto}')]//button[contains(@class,'w-7 h-7')])[last()]
+    Wait Until Element Is Not Visible    xpath=//*[contains(text(),'Carrito vacío')]    5s
